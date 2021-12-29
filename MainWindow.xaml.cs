@@ -56,6 +56,7 @@ namespace MessangerProject
             };
 
             MessagesField.Children.Add(textBlock);
+            MessageText.Text = "";
         }
 
 
@@ -64,6 +65,7 @@ namespace MessangerProject
             if(e.Key == Key.Enter)
             {
                 _client.SendMessage(MessageText.Text);
+                MessageText.Text = "";
             }
 
         }
@@ -78,6 +80,7 @@ namespace MessangerProject
         {
             if(e.Key == Key.Enter)
             {
+                _client.UserName = UsernameUI.Text;
                 UsernameUI.Text = EditUserNameField.Text;
                 UserName = UsernameUI.Text;
                 EditUserNameField.Text = "";

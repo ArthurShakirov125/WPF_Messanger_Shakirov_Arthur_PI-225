@@ -24,10 +24,18 @@ namespace MessangerProject
     public class ClientServerPart
     {
         private TcpClient _user;
-        private string _UserName;
         private NetworkStream _stream;
         private StreamWriter _sw;
         private StreamReader _sr;
+
+
+        private string _UserName;
+
+        public string UserName
+        {
+            get { return _UserName; }
+            set { _UserName = value; }
+        }
 
 
         public ClientServerPart(string UserName)
